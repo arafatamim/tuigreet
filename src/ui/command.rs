@@ -27,7 +27,7 @@ pub fn draw(greeter: &mut Greeter, f: &mut Frame<TermionBackend<RawTerminal<io::
   let container = Rect::new(x, y, width, height);
   let frame = Rect::new(x + container_padding, y + container_padding, width - container_padding, height - container_padding);
 
-  let block = Block::default().title(CHANGE_COMMAND).borders(Borders::ALL).border_type(BorderType::Plain);
+  let block = Block::default().title(CHANGE_COMMAND).borders(Borders::ALL).border_type(BorderType::Rounded);
 
   f.render_widget(block, container);
 

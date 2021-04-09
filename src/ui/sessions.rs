@@ -26,7 +26,7 @@ pub fn draw(greeter: &mut Greeter, f: &mut Frame<TermionBackend<RawTerminal<io::
   let container = Rect::new(x, y, width, height);
 
   let title = Span::from(format!(" {} ", CHANGE_SESSION));
-  let block = Block::default().title(title).borders(Borders::ALL).border_type(BorderType::Plain);
+  let block = Block::default().title(title).borders(Borders::ALL).border_type(BorderType::Rounded);
 
   for (index, (name, _)) in greeter.sessions.iter().enumerate() {
     let name = format!("{:1$}", name, greeter.width() as usize - 4);

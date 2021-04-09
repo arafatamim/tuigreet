@@ -27,15 +27,14 @@ pub fn draw(greeter: &mut Greeter, f: &mut Frame<TermionBackend<RawTerminal<io::
   let width = greeter.width();
   let height = get_height(&greeter);
   let container_padding = greeter.container_padding();
-  let prompt_padding = greeter.prompt_padding();
+  let prompt_padding = 0; // greeter.prompt_padding();
   let x = (size.width - width) / 2;
   let y = (size.height - height) / 2;
 
   let container = Rect::new(x, y, width, height);
   let frame = Rect::new(x + container_padding, y + container_padding, width - container_padding, height - container_padding);
-
   let hostname = Span::from(format!(" {} {} ", TITLE, get_hostname()));
-  let block = Block::default().title(hostname).borders(Borders::ALL).border_type(BorderType::Plain);
+  let block = Block::default().title(hostname).borders(Borders::ALL).border_type(BorderType::Rounded);
 
   f.render_widget(block, container);
 

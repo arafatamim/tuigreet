@@ -8,7 +8,7 @@ pub fn get_height(greeter: &Greeter) -> u16 {
 
   let initial = match greeter.mode {
     Mode::Username | Mode::Command => (2 * container_padding) + 1,
-    Mode::Password => (2 * container_padding) + prompt_padding + 2,
+    Mode::Password => (2 * container_padding) + prompt_padding + 1,
     Mode::Sessions => (2 * container_padding),
   };
 
